@@ -100,7 +100,7 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(243, 79);
             this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "LOGIN";
+            this.guna2Button1.Text = "Login";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label2

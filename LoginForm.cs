@@ -15,6 +15,7 @@ namespace PharmacyManagementSystem
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrWhiteSpace(txtUsername.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 MessageBox.Show("الرجاء إدخال اسم المستخدم وكلمة المرور", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);

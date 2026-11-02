@@ -21,7 +21,7 @@ namespace PharmacyManagementSystem
 
             using (SqlConnection connection = new SqlConnection(con.ConnectionString))
             {
-                // تصحيح استخدام الاتصال المحلي هنا
+
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
@@ -51,7 +51,6 @@ namespace PharmacyManagementSystem
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
 
-                            // ملاحظة: تأكد أن اسم الـ ComboBox لديك هو نفسه (guna2ComboBox1) أو قم بتغييره بالاسم الموجود في التصميم
                             guna2ComboBox1.DataSource = dt;
                             guna2ComboBox1.DisplayMember = "Com_Name";
                             guna2ComboBox1.ValueMember = "Com_Name";
@@ -70,10 +69,8 @@ namespace PharmacyManagementSystem
             populate();
             fillCompanyCombo();
 
-            // 1. إلغاء التمدد التلقائي للأعمدة لفتح المجال للتحكم اليدوي
             guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            // 2. تحديد عرض محدد لكل عمود (العرض بالبكسل)
             guna2DataGridView1.Columns[0].Width = 120;  // عمود اسم الدواء (MedName)
             guna2DataGridView1.Columns[1].Width = 80;   // عمود سعر الشراء (Bprice)
             guna2DataGridView1.Columns[2].Width = 80;   // عمود سعر البيع (Sprice)

@@ -112,7 +112,7 @@ namespace PharmacyManagementSystem
                 }
                 else
                 {
-                    MessageBox.Show("رقم الموظف غير موجود في قاعدة البيانات!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("رقم الشركة غير موجود في قاعدة البيانات!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -170,7 +170,7 @@ namespace PharmacyManagementSystem
                 }
                 else
                 {
-                    MessageBox.Show("رقم الموظف غير موجود ليتم حذفه!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("رقم الشركة غير موجود ليتم حذفه!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

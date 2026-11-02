@@ -181,8 +181,6 @@ namespace PharmacyManagementSystem
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@Emp_id", txtEmployeeID.Text);
-
-                // التحقق مما إذا تم العثور على الموظف وحذفه فعلياً
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
