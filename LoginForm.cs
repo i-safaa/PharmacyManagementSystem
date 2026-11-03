@@ -10,7 +10,6 @@ namespace PharmacyManagementSystem
             InitializeComponent();
         }
 
-
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Documents\Pharmecenter_db.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -55,5 +54,6 @@ namespace PharmacyManagementSystem
         {
             Application.Exit();
         }
+
     }
 }

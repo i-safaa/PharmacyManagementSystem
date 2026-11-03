@@ -32,6 +32,17 @@ namespace PharmacyManagementSystem
         private void BillingForm_Load(object sender, EventArgs e)
         {
             populatecombobox();
+            // إظهار رأس الأعمدة بشكل دائم
+            guna2DataGridView1.ColumnHeadersVisible = true;
+            // 1. إلغاء التمدد التلقائي للسماح بالأحجام الثابتة
+            guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+            // 2. إعطاء حجم ثابت لكل عمود بالبكسل (المجموع الكلي تقريباً 789)
+            guna2DataGridView1.Columns["MedID"].Width = 100;
+            guna2DataGridView1.Columns["MedName"].Width = 269;
+            guna2DataGridView1.Columns["MedQty"].Width = 100;
+            guna2DataGridView1.Columns["UntiPrice"].Width = 160;
+            guna2DataGridView1.Columns["TotalPrice"].Width = 160;
         }
 
         // ==========================================
@@ -294,5 +305,7 @@ namespace PharmacyManagementSystem
             home.Show();
             this.Hide();
         }
+
+
     }
 }

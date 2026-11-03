@@ -33,6 +33,7 @@ namespace PharmacyManagementSystem
                 }
             }
         }
+
         private void btnADD_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCompanyID.Text) ||
@@ -56,7 +57,6 @@ namespace PharmacyManagementSystem
                 cmd.Parameters.AddWithValue("@Com_phone", txtCompanyPhone.Text);
                 cmd.Parameters.AddWithValue("@Com_adress", txtCompanyAdress.Text);
 
-
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("تمت الاضافة الى قاعدة البيانات", "صح", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -73,11 +73,29 @@ namespace PharmacyManagementSystem
             }
 
             populate();
+            ApplyColumnWidths(); // تطبيق القياسات بعد التحديث
         }
 
         private void CompanyForm_Load(object sender, EventArgs e)
         {
             populate();
+            ApplyColumnWidths(); // تطبيق القياسات عند التحميل
+        }
+
+        // الدالة المعدلة لتثبيت العرض حسب الترتيب الفعلي للأعمدة
+        private void ApplyColumnWidths()
+        {
+            if (guna2DataGridView1.Columns.Count >= 4)
+            {
+                // إيقاف التمدد التلقائي
+                guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+                // تثبيت عرض الأعمدة بالتسلسل (المجموع = 100 + 236 + 200 + 200 = 736)
+                guna2DataGridView1.Columns[0].Width = 100; // Com_id
+                guna2DataGridView1.Columns[1].Width = 236; // Com_name (أو الاسم)
+                guna2DataGridView1.Columns[2].Width = 200; // Com_phone
+                guna2DataGridView1.Columns[3].Width = 200; // Com_adress
+            }
         }
 
         private void btnUPDATE_Click(object sender, EventArgs e)
@@ -103,7 +121,6 @@ namespace PharmacyManagementSystem
                 cmd.Parameters.AddWithValue("@Com_phone", txtCompanyPhone.Text);
                 cmd.Parameters.AddWithValue("@Com_adress", txtCompanyAdress.Text);
 
-
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
@@ -128,6 +145,7 @@ namespace PharmacyManagementSystem
             }
 
             populate();
+            ApplyColumnWidths(); // تطبيق القياسات بعد التحديث
         }
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -140,7 +158,6 @@ namespace PharmacyManagementSystem
                 txtCompanyName.Text = row.Cells[1].Value?.ToString() ?? string.Empty;
                 txtCompanyPhone.Text = row.Cells[2].Value?.ToString() ?? string.Empty;
                 txtCompanyAdress.Text = row.Cells[3].Value?.ToString() ?? string.Empty;
-
             }
         }
 
@@ -160,7 +177,6 @@ namespace PharmacyManagementSystem
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@Com_id", txtCompanyID.Text);
-
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -186,6 +202,7 @@ namespace PharmacyManagementSystem
             }
 
             populate();
+            ApplyColumnWidths(); // تطبيق القياسات بعد الحذف
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -193,7 +210,6 @@ namespace PharmacyManagementSystem
             HomeForm home = new HomeForm();
             home.Show();
             this.Hide();
-
         }
     }
 }
