@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace PharmacyManagementSystem
@@ -83,17 +82,7 @@ namespace PharmacyManagementSystem
         private void EmployeesForm_Load(object sender, EventArgs e)
         {
             populate();
-            // 1. إلغاء التمدد التلقائي للأعمدة لفتح المجال للتحكم اليدوي
-            guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            // 2. تحديد عرض محدد لكل عمود (العرض بالبكسل)
-            guna2DataGridView1.Columns[0].Width = 20;   // عمود المعرف (Emp_id)
-            guna2DataGridView1.Columns[1].Width = 110;  // عمود الاسم (Emp_name)
-            guna2DataGridView1.Columns[2].Width = 80;   // عمود العمر (Emp_age)
-            guna2DataGridView1.Columns[3].Width = 80;  // عمود الراتب (Emp_salary)
-            guna2DataGridView1.Columns[4].Width = 80;   // عمود الجنس (Emp_Gender)
-            guna2DataGridView1.Columns[5].Width = 115;  // عمود الهاتف (Emp_phonenumber)
-            guna2DataGridView1.BackgroundColor = Color.Gray;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

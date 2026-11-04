@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace PharmacyManagementSystem
@@ -68,18 +67,6 @@ namespace PharmacyManagementSystem
         {
             populate();
             fillCompanyCombo();
-
-            guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-
-            guna2DataGridView1.Columns[0].Width = 120;  // عمود اسم الدواء (MedName)
-            guna2DataGridView1.Columns[1].Width = 80;   // عمود سعر الشراء (Bprice)
-            guna2DataGridView1.Columns[2].Width = 80;   // عمود سعر البيع (Sprice)
-            guna2DataGridView1.Columns[3].Width = 70;   // عمود الكمية (MedQty)
-            guna2DataGridView1.Columns[4].Width = 100;  // عمود تاريخ الصلاحية (ExpDate)
-            guna2DataGridView1.Columns[5].Width = 115;  // عمود الشركة (Company)
-            guna2DataGridView1.BackgroundColor = Color.Gray;
-
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
